@@ -32,3 +32,9 @@ RHWP_WITHOUT_HWPCTRL=1 npx vite build --base ./ --outDir dist-rel
 ## 라이선스
 - rhwp: MIT — `LICENSE-rhwp.txt`
 - 글꼴: `fonts/FONTS.md`
+
+## 추가 메뉴 (도구 메뉴, 원본 rhwp-studio에 없는 기능)
+- `PC 앱으로 설치 (오프라인 사용)…`: Chrome·Edge의 설치 창 호출(beforeinstallprompt). 이미 설치·미지원 시 안내 표시
+- `HWP 파일 아이콘 설정 도구 받기 (Windows)…`: `tools/hwp-icon-set.zip`(PowerShell 스크립트) 내려받기 + 실행 안내
+- 구현 위치: `index.html`의 `<head>` 끝 인라인 스크립트, 도구 메뉴 항목 2개, `</body>` 앞 모달·스크립트
+- rhwp 새 버전으로 교체할 때 위 세 부분을 다시 넣고 `sw.js`의 index.html revision을 갱신해야 함
